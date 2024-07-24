@@ -83,6 +83,22 @@ const callNumber = phone => {
 };
 
 
+const timeDuration = (startTime, duration) => {
+    const timeduration = new Date(new Date(startTime).getTime() + duration * 60000);
+    const currentTime = new Date();
+    const timeDifference = timeduration?.getTime() - currentTime.getTime();
+    let thetime;
+    if (timeDifference > 0) {
+        const minutes = Math.floor((timeDifference / 60000) % 60);
+        const seconds = Math.floor((timeDifference / 1000) % 60);
+        thetime = minutes + ":" + seconds;
+    } else {
+        thetime = "Invalid";
+    }
+    return thetime;
+}
+
+
 export {
     isEmptyObject,
     isEmpty,
@@ -93,5 +109,6 @@ export {
     capitalize,
     capitalizeName,
     callNumber,
-    isOnlyIntegers
+    isOnlyIntegers,
+    timeDuration
 }
