@@ -1,6 +1,10 @@
 import React from 'react';
 import {Alert, Linking, Platform, Share, View} from 'react-native';
 
+const isEmptyObject = (obj) => {
+    return Object.keys(obj).length === 0;
+}
+
 const isEmpty = (returnBoolean, val) => {
     if (returnBoolean) {
         return (val === undefined || val === null || val.length <= 0 || val == 'null') ? true : false;
@@ -77,3 +81,17 @@ const callNumber = phone => {
         })
         .catch(err => console.log(err));
 };
+
+
+export {
+    isEmptyObject,
+    isEmpty,
+    isEmptyValue,
+    getFileExtension,
+    emailValidation,
+    getFileName,
+    capitalize,
+    capitalizeName,
+    callNumber,
+    isOnlyIntegers
+}
