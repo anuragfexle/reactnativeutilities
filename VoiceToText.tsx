@@ -275,3 +275,25 @@ const styles = StyleSheet.create({
 });
 
 export default VoiceToText;
+
+
+
+
+
+
+/* 
+    example of using this component 
+
+    Call it in Component like below...
+
+<VoiceToText getSpeechToTextCallBack={getSpeechToTextCallBack} />
+
+
+const getSpeechToTextCallBack = (results: any) => {
+        results.map((item: any) => {
+           console.log(item)
+            return;
+        });
+    };
+
+*/
